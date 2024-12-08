@@ -31,17 +31,24 @@ struct PredatorDetail: View {
                                 endPoint: .bottom
                             )
                         }
-
-                    Image(predator.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(
-                            width: geo.size.width / 1.5,
-                            height: geo.size.height / 3
-                        )
-                        .scaleEffect(x: -1)
-                        .shadow(color: .black, radius: 7)
-                        .offset(y: 20)
+                    NavigationLink {
+                        Image(predator.image)
+                            .resizable()
+                            .scaledToFit()
+                            .scaleEffect(x: -1)
+                            .shadow(color: .white, radius: 2)
+                    } label: {
+                        Image(predator.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(
+                                width: geo.size.width / 1.5,
+                                height: geo.size.height / 3
+                            )
+                            .scaleEffect(x: -1)
+                            .shadow(color: .black, radius: 7)
+                            .offset(y: 20)
+                    }
                 }
 
                 VStack(alignment: .leading) {
